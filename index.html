@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyFi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="src/favicon.ico" type="image/x-icon">
+
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+
+<body>
+
+    <video class="background-video" src="src/backgroundVideo.mp4" muted loop autoplay></video>
+
+<!--------------------------------------------- The nav bar ------------------------------------------------->
+
+    <nav>
+        <ul>
+            <li class="brand"><img src="src/logo.png" alt="StudyFi"> StudyFi</li>
+            
+            <li class="navList" id="about">About</li>
+        </ul>
+    </nav>
+
+<!--------------------------------------------- The About section ------------------------------------------------->
+
+    <div class="bg-modal">
+        <div class="modal-content">
+            <div class="close">+</div>
+            <div> <br> Hello Hustler <br>
+            
+            </div>
+        </div>
+    </div>
+
+    <!-- The center display to display the songs list and the time and the gif -->
+    <div class="center-display">
+
+        <!-- The songs Channels -->
+        <div class="channel">
+
+            <div class="song">LOFI GIRL
+                <div data-video="5qap5aO4i9A" data-autoplay="0" data-loop="1" id="lofi-girl" class="youtube-video">
+                </div>
+            </div>
+
+
+            <div class="song">ANIME VIBE
+                <div data-video="WDXPJWIgX-o" data-autoplay="0" data-loop="1" id="anime" class="youtube-video"></div>
+            </div>
+
+
+            <div class="song">ASTRAL THROB
+                <div data-video="-5KAN9_CzSA" data-autoplay="0" data-loop="1" id="astral-throb" class="youtube-video">
+                </div>
+            </div>
+
+
+            <div class="song">CHILL RADIO
+                <div data-video="ceqgwo7U28Y" data-autoplay="0" data-loop="1" id="chill-radio" class="youtube-video">
+                </div>
+            </div>
+
+
+            <div class="song">SLOW + REVERB
+                <div data-video="5qap5aO4i9A" data-autoplay="0" data-loop="1" id="slow-reverb" class="youtube-video">
+                </div>
+            </div>
+
+            <div class="song">JAZZ/LOFI HIP HOP
+                <div data-video="kgx4WGK0oNU" data-autoplay="0" data-loop="1" id="jass-lofi" class="youtube-video">
+                </div>
+            </div>
+
+            <div class="song">JAPANESE LOFI
+                <div data-video="-9gEgshJUuY" data-autoplay="0" data-loop="1" id="japanese-lofi" class="youtube-video">
+                </div>
+            </div> 
+
+            <div class="song">GOOD VIBES
+                <div data-video="aGSYKFb_zxg" data-autoplay="0" data-loop="1" id="good-vibes" class="youtube-video">
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="song-name-time">
+
+            <div id="time">12:00:00 PM</div>
+
+            <div class="song-name">
+
+            </div>
+        </div>
+    </div>
+
+
+<!------------------------- Bottom section for extra audio effects and play and pause button for song --------------------------->
+
+    <div class="bottom">
+        <!-- <input type="range" name="range" id="seekBar" min="0" max="100"> -->
+        <div class="extraAudios">
+            <div class="rainAudioContainer">
+
+                <input type="range" min="0" max="100" value="0" class="slider" id="rainSlider">
+                <i id="rainVolumeLogo" class="fa-solid fa-cloud-rain fa-2x controlButton"></i>
+                <audio loop id="rainAudio">
+                    <source src="src/rain.mp3">
+                </audio>
+
+            </div>
+
+            <div class="oceanWaveContainer" >
+
+                <input type="range" min="0" max="100" value="0" class="slider" id="oceanSlider">
+                <i id="oceanWaveLogo" class="fa-solid fa-water fa-2x controlButton"></i>
+                <audio loop id="oceanAudio">
+                    <source src="src/ocean.mp3">
+                </audio>
+
+            </div>
+
+            <div class="sunnyDayContainer">
+
+                <input type="range" min="0" max="100" value="0" class="slider" id="sunnyDaySlider">
+                <i id="sunnyDayLogo" class="fa-solid fa-sun fa-2x controlButton"></i>
+                <audio loop id="sunnyDayAudio">
+                    <source src="src/sunnyDay.mp3" data-loop=1>
+                </audio>
+
+            </div>
+        </div>
+
+
+        <div class="masterPlayContainer">
+            <i id="masterPlay" class="fa-solid fa-play fa-4x controlButton"></i>
+        </div>
+        
+        <div class="volumeUpDown">
+            <i id="volume" class="fa-solid fa-volume-high fa-2x controlButton"></i>
+            <input type="range" min="0" max="100" value="100" class="slider" id="masterVolume">
+        </div>
+    </div>
+
+
+
+    <script src="script.js"></script>
+    <script type="text/javascript" src="https://www.youtube.com/iframe_api"></script>
+    <script src="https://kit.fontawesome.com/0045543a8c.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
