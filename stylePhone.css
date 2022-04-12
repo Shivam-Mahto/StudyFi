@@ -1,0 +1,106 @@
+@media only screen and (max-width: 768px) {
+    
+    /* top logos */
+    body{
+        display: flex;
+    }
+    
+    .brand{
+        font-size: 1.8rem;
+    }
+
+    .brand img{
+        width: 3.5rem;
+    }
+    
+    .background-video{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        object-fit: fill;
+    }
+
+    .center-display{
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* the song channels */
+    .song{
+        width: 75%;
+    }
+
+    .channel{
+        width: 100%;
+        height: 100%;
+    }
+
+    .song:hover{
+        width: 80%;
+    }
+
+    .song-name{
+        margin-top: 1.4rem;
+        font-size: 1.5rem;
+    }
+    
+    /* Hiding the unecessary things */
+    
+    /* nav{
+        position: fixed;
+        background-color: black;
+        height: 50vh;
+    } */
+    
+    .modal-content{
+        width: 80%;
+        height: 80%;
+        font-size: 1rem;
+    }
+
+
+    #time
+    {
+        display: none;
+    }
+
+    .bottom{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        bottom: 0;
+    }
+
+    .volumeUpDown{
+        display: none;
+    }
+
+    .sunnyDayContainer{
+        display: none;
+    }
+
+    .oceanWaveContainer{
+        display: none;
+    }
+
+    .rainAudioContainer{
+        display: none;
+    }
+
+    .navList{
+        display: none;
+    }
+
+    .hamIcon
+    {
+        display: block;
+        position: absolute;
+        right: 1rem;
+        top: 0.5rem;
+        cursor: pointer;
+    }
+
+    
+}

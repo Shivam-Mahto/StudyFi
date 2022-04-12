@@ -1,3 +1,70 @@
+// <----------------------------- For the hamburger icon ------------------------------------>
+
+function toggleHamburgerIcon(change) {
+    var toggleHam = document.querySelector('.hamIcon');
+    if (change) {
+        toggleHam.innerHTML = "<h1>&#10006;</h1>";
+    }
+    else {
+        toggleHam.innerHTML = "<h1>&#9776;</h1>";
+    }
+}
+
+
+function opentheSideBar(value)
+{
+    if(value)
+    {
+        var navBar = document.querySelector('nav');
+        navBar.style.backgroundColor = 'black';
+        navBar.style.height = '50vh';
+        navBar.style.position = 'fixed';
+        
+        var navBarContent = document.getElementById('about');
+        setTimeout(() => {
+            navBarContent.style.display = 'block';
+        }, 400);
+        navBarContent.style.position = 'fixed';
+        navBarContent.style.top = '20vh';
+        navBarContent.style.left = '40vw';
+        toggleHamburgerIcon(true);
+    }
+    else
+    {
+        toggleHamburgerIcon(false);
+        var navBar = document.querySelector('nav');
+        navBar.style.backgroundColor = 'transparent';
+        navBar.style.height = 'auto';
+        navBar.style.position = 'relative';
+
+
+        var navBarContent = document.getElementById('about');
+        navBarContent.style.display = 'none';
+    }
+}
+
+
+var hamburgerIcon = document.getElementsByClassName("hamIcon")[0];
+
+hamburgerIcon.addEventListener('click', () => {
+
+    var toggleHam = document.querySelector('.hamIcon');
+    var temp = toggleHam.children[0];
+    
+    if(temp.innerHTML == "☰")
+        opentheSideBar(true);
+    else
+        opentheSideBar(false);
+});
+
+
+// window.onclick = function (event) {
+//     console.log("hell");
+// }
+
+
+
+
 // <----------------------------- For playing the song ------------------------------------>
 
 // Array to store all the players for the music stations
@@ -6,8 +73,7 @@ const allPlayer = [];
 // For loading all the videos
 window.onload = function allVideo() {
 
-    for(let i=songName.length - 1; i>=0; i--)
-    {
+    for (let i = songName.length - 1; i >= 0; i--) {
         let songId = songName[i].children[0].id;
         let ctrlq = document.getElementById(songId);
         onYouTubeIframeAPIReady(ctrlq);
@@ -48,9 +114,9 @@ songName.forEach(element => {
         var songNameText = document.querySelector('.song-name');
         // songNameText.style.opacity = 0;
         songNameText.innerHTML = element.innerHTML;
-        
+
         // callTheTransition();
-        
+
         currentVideo = allPlayer[songName.indexOf(element)];
         pauseAllVideos();
         currentVideo.setVolume(masterVolumeSlider.value);
@@ -68,19 +134,15 @@ document.addEventListener('keyup', event => {
     }
 });
 
-function callTheTransition()
-{
+function callTheTransition() {
     songNameText.style.opacity = 1;
 }
 
 // To pause all the videos
-function pauseAllVideos()
-{
-    for(let i=songName.length - 1; i>=0; i--)
-    {
+function pauseAllVideos() {
+    for (let i = songName.length - 1; i >= 0; i--) {
         let element = allPlayer[songName.indexOf(songName[i])];
-        if(element.getPlayerState() == 1)
-        {
+        if (element.getPlayerState() == 1) {
             element.pauseVideo();
         }
     }
@@ -97,6 +159,12 @@ function togglePlayButton(play) {
 document.getElementById('about').addEventListener('click',
     function () {
         document.querySelector('.bg-modal').style.display = 'flex';
+        
+        var navBar = document.querySelector('nav');
+        if(navBar.style.backgroundColor == 'black')
+        {
+            opentheSideBar(false);
+        }
     });
 
 
@@ -105,10 +173,17 @@ document.querySelector('.close').addEventListener('click',
         document.querySelector('.bg-modal').style.display = 'none';
     });
 
+// When ever the user click outside of the modal
+var modal = document.querySelector('.bg-modal');
+window.onclick = function (event) {
 
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
 
 // <------------------------------- Displaying the time ---------------------------------->
- 
+
 setInterval(function () {
     const time = document.querySelector("#time");
     let date = new Date();
@@ -140,8 +215,7 @@ setInterval(function () {
 // for playing and pause the the music 
 document.getElementById('masterPlay').addEventListener('click', playPause);
 
-function playPause() 
-{
+function playPause() {
     let iconName = document.getElementById('masterPlay');
     if (iconName.className == "fa-solid fa-play fa-4x controlButton") {
 
@@ -171,7 +245,7 @@ var rain = document.querySelector('#rainAudio');
 
 var rainSlider = document.querySelector('#rainSlider');
 rainSlider.oninput = function () {
-    if(this.value > 0)
+    if (this.value > 0)
         rain.play();
     rain.volume = this.value / 100;
 }
@@ -182,7 +256,7 @@ var ocean = document.querySelector('#oceanAudio');
 
 var oceanSlider = document.querySelector('#oceanSlider');
 oceanSlider.oninput = function () {
-    if(this.value > 0)
+    if (this.value > 0)
         ocean.play();
     ocean.volume = this.value / 100;
 }
@@ -192,7 +266,7 @@ var sunnyDay = document.querySelector('#sunnyDayAudio');
 
 var sunnyDaySlider = document.querySelector('#sunnyDaySlider');
 sunnyDaySlider.oninput = function () {
-    if(this.value > 0)
+    if (this.value > 0)
         sunnyDay.play();
     sunnyDay.volume = this.value / 100;
 }
@@ -201,9 +275,8 @@ sunnyDaySlider.oninput = function () {
 
 var masterVolumeSlider = document.querySelector("#masterVolume");
 
-masterVolumeSlider.oninput = function (){
-    if(this.value == 0)
-    {
+masterVolumeSlider.oninput = function () {
+    if (this.value == 0) {
         document.querySelector("#volume").className = "fa-solid fa-volume-xmark fa-2x controlButton";
     }
     else
@@ -212,16 +285,14 @@ masterVolumeSlider.oninput = function (){
 }
 
 var volumeButton = document.querySelector("#volume");
-volumeButton.addEventListener('click', ()=>{
+volumeButton.addEventListener('click', () => {
 
-    if(volumeButton.className == "fa-solid fa-volume-high fa-2x controlButton")  
-    {
+    if (volumeButton.className == "fa-solid fa-volume-high fa-2x controlButton") {
         document.querySelector("#volume").className = "fa-solid fa-volume-xmark fa-2x controlButton";
         document.querySelector("#masterVolume").value = 0;
         currentVideo.setVolume(0);
     }
-    else
-    {
+    else {
         document.querySelector("#volume").className = "fa-solid fa-volume-high fa-2x controlButton";
         document.querySelector("#masterVolume").value = 100;
         currentVideo.setVolume(100);
