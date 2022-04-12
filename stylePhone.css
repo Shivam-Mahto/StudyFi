@@ -1,6 +1,12 @@
 @media only screen and (max-width: 768px) {
-    
-    /* top logos */
+/* --------------------------------------------- To remove the highlighting ------------------------------------------------- */
+html
+    {
+    -webkit-tap-highlight-color:transparent;
+    }
+
+/* --------------------------------------------- Top logo portion ------------------------------------------------- */
+
     body{
         display: flex;
     }
@@ -13,6 +19,7 @@
         width: 3.5rem;
     }
     
+
     .background-video{
         position: absolute;
         width: 100%;
@@ -21,12 +28,24 @@
         object-fit: fill;
     }
 
+
+/* --------------------------------------------- for the nav bar ------------------------------------------------- */
+
+    .navList{
+        display: none;
+    }
+
+/* --------------------------------------------- Center display ------------------------------------------------- */
+
     .center-display{
         display: flex;
         flex-direction: column;
     }
 
-    /* the song channels */
+
+/* --------------------------------------------- Song Display ------------------------------------------------- */
+
+
     .song{
         width: 75%;
     }
@@ -43,27 +62,18 @@
     .song-name{
         margin-top: 1.4rem;
         font-size: 1.5rem;
+        z-index: -1;
     }
     
-    /* Hiding the unecessary things */
-    
-    /* nav{
-        position: fixed;
-        background-color: black;
-        height: 50vh;
-    } */
-    
+/* --------------------------------------------- About Tab ------------------------------------------------- */
+
+
     .modal-content{
         width: 80%;
         height: 80%;
         font-size: 1rem;
     }
 
-
-    #time
-    {
-        display: none;
-    }
 
     .bottom{
         display: flex;
@@ -73,26 +83,50 @@
         bottom: 0;
     }
 
+/* --------------------------------------------- Hiding unnecessary things ------------------------------------------------- */
+
+    #time
+    {
+        display: none;
+    }
+
     .volumeUpDown{
+        
         display: none;
     }
 
     .sunnyDayContainer{
+        position: fixed;
+        left: 20vw;
+        z-index: 1;
+        bottom: 10vh;
         display: none;
     }
 
     .oceanWaveContainer{
+        position: fixed;
+        left: 20vw;
+        z-index: 1;
+        bottom: 30vh;
         display: none;
     }
 
     .rainAudioContainer{
+        left: 20vw;
+        position: fixed;
+        z-index: 1;
+        bottom: 20vh;
         display: none;
     }
 
-    .navList{
-        display: none;
+   
+    .slider{
+        opacity: 0.7;
+        width: 30vw;
+        cursor: pointer;
     }
 
+/* --------------------------------------------- for ham Burger icon ------------------------------------------------- */
     .hamIcon
     {
         display: block;
@@ -102,5 +136,19 @@
         cursor: pointer;
     }
 
-    
+/* --------------------------------------------- for the extra sound icon ------------------------------------------------- */
+
+    .adjustOption{
+        position: absolute;
+        right: 2rem;
+        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 3rem;
+        width: 3rem;
+        border: solid 2px;
+        border-radius: 50%;
+        background-image: linear-gradient(to left,#614be2, rgb(70, 142, 241),#04bdce);
+    }
 }

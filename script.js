@@ -10,7 +10,6 @@ function toggleHamburgerIcon(change) {
     }
 }
 
-
 function opentheSideBar(value)
 {
     if(value)
@@ -56,13 +55,6 @@ hamburgerIcon.addEventListener('click', () => {
     else
         opentheSideBar(false);
 });
-
-
-// window.onclick = function (event) {
-//     console.log("hell");
-// }
-
-
 
 
 // <----------------------------- For playing the song ------------------------------------>
@@ -300,3 +292,51 @@ volumeButton.addEventListener('click', () => {
 
 });
 
+
+// <------------------------ To display the extra sound options ----------------------------------------->
+
+var extraSoundIcon = document.querySelector(".adjustOption");
+
+extraSoundIcon.addEventListener('click', ()=>{
+    openCloseTheExtraSoundBar(true);
+})
+
+function openCloseTheExtraSoundBar(open)
+{
+    var rainHidden = document.querySelector('.rainAudioContainer');
+    var oceanHidden = document.querySelector('.oceanWaveContainer');
+    var sunnyHidden = document.querySelector('.sunnyDayContainer');
+
+    if(open)
+    {   
+        openCloseTheBottomDiv(true);
+        rainHidden.style.display = 'block';
+        oceanHidden.style.display = 'block';
+        sunnyHidden.style.display = 'block';
+    }
+    else{
+        openCloseTheBottomDiv(false);
+        rainHidden.style.display = 'none';
+        oceanHidden.style.display = 'none';
+        sunnyHidden.style.display = 'none';
+    }
+}
+
+var bottomCloseIcon = document.querySelector('.CloseAtBottom');
+bottomCloseIcon.addEventListener('click', ()=>{
+    openCloseTheExtraSoundBar(false);
+})
+
+
+function openCloseTheBottomDiv(open)
+{
+    if(open)
+    {
+        document.querySelector('.extraSoundDivBackground').style.display = 'block';
+    }
+    else
+    {
+        document.querySelector('.extraSoundDivBackground').style.display = 'none';
+
+    }
+}
