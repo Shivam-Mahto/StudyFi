@@ -1,81 +1,58 @@
 @media only screen and (max-width: 768px) {
-/* --------------------------------------------- To remove the highlighting ------------------------------------------------- */
-html
-    {
+/* To remove the highlighting */
+html {
     -webkit-tap-highlight-color:transparent;
-    }
-
-/* --------------------------------------------- Top logo portion ------------------------------------------------- */
-
+}
+/* Top logo portion */
     body{
         display: flex;
     }
-    
     .brand{
         font-size: 1.8rem;
     }
-
     .brand img{
         width: 3.5rem;
     }
-    
-
-    .background-video{
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        object-fit: fill;
-    }
-
-
-/* --------------------------------------------- for the nav bar ------------------------------------------------- */
-
-    .navList{
+    .background-img{
         display: none;
     }
 
-/* --------------------------------------------- Center display ------------------------------------------------- */
+/* for the nav bar */
+    .navList{
+        display: none;
+        background-color: white;
+    }
 
+/* Center display */
     .center-display{
         display: flex;
         flex-direction: column;
     }
 
-
-/* --------------------------------------------- Song Display ------------------------------------------------- */
-
-
+/*  Song Display */
     .song{
         width: 75%;
     }
-
     .channel{
         width: 100%;
         height: 100%;
     }
-
     .song:hover{
         width: 80%;
     }
-
     .song-name{
         margin-top: 1.4rem;
         font-size: 1.5rem;
         z-index: -1;
     }
     
-/* --------------------------------------------- About Tab ------------------------------------------------- */
-
-
-    .modal-content{
+/* About Tab */
+    .modal-content {
         width: 80%;
         height: 80%;
         font-size: 1rem;
     }
-
-
-    .bottom{
+    .bottom {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -83,65 +60,52 @@ html
         bottom: 0;
     }
 
-/* --------------------------------------------- Hiding unnecessary things ------------------------------------------------- */
-
-    #time
-    {
+/* Hiding unnecessary things */
+    #time {
         display: none;
     }
-
-    .volumeUpDown{
-        
+    .volumeUpDown {   
         display: none;
     }
-
-    .sunnyDayContainer{
+    .sunnyDayContainer {
         position: fixed;
         left: 20vw;
         z-index: 1;
         bottom: 10vh;
         display: none;
     }
-
-    .oceanWaveContainer{
+    .oceanWaveContainer {
         position: fixed;
         left: 20vw;
         z-index: 1;
         bottom: 30vh;
         display: none;
     }
-
-    .rainAudioContainer{
+    .rainAudioContainer {
         left: 20vw;
-        position: fixed;
+        position: absolute;
         z-index: 1;
         bottom: 20vh;
         display: none;
     }
-
-   
-    .slider{
+    .slider {
         opacity: 0.7;
         width: 30vw;
         cursor: pointer;
     }
 
-/* --------------------------------------------- for ham Burger icon ------------------------------------------------- */
-    .hamIcon
-    {
+/* for ham Burger icon  */
+    .hamIcon {
         display: block;
         position: absolute;
         right: 1rem;
         top: 0.5rem;
         cursor: pointer;
     }
-
-/* --------------------------------------------- for the extra sound icon ------------------------------------------------- */
-
-    .adjustOption{
+/* for the extra sound icon */
+    .adjustOption {
         position: absolute;
         right: 2rem;
-        display: block;
         display: flex;
         align-items: center;
         justify-content: center;
