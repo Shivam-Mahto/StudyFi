@@ -13,14 +13,10 @@ html {
     .brand img{
         width: 3.5rem;
     }
-    .background-img{
-        display: none;
-    }
 /* for the nav bar */
     .navList{
         display: none;
     }
-
 /* Center display */
     .center-display{
         display: flex;

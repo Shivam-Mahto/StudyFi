@@ -11,12 +11,15 @@ body{
     margin: 0;
     animation-duration: infinite;
 }
-.background-img{
-    position: absolute;
-    z-index: -1;
+
+.background{
     height: 100vh;
     width: 100vw;
+    position: absolute;
+    object-fit: cover;
+    z-index: -1;
 }
+
 /*  Logo image */
 .brand{
     display: flex;
@@ -118,6 +121,7 @@ nav ul{
     text-align: center;
     padding: 7px;
 }
+
 .song:hover{
     background-image: linear-gradient(to right,#614be2, rgb(70, 142, 241),#04bdce);
     width: 85%;
