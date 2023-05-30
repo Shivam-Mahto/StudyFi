@@ -12,8 +12,8 @@ window.onload = function allVideo() {
 };
 
 // The api function to load the videos
-var player;
 function onYouTubeIframeAPIReady(ctrlq) {
+    let player;
     ctrlq.innerHTML = '<div id="youtube-player"></div>';
     ctrlq.style.cssText = 'width:0%;cursor:pointer;display:none';
     player = new YT.Player('youtube-player', {

@@ -1,9 +1,11 @@
 /* ----------------------------- For the body of the page ------------------------------------- */
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+
 body{
     font-family: sans-serif;
     flex-direction: column;
-    background-color:  black;
+    background-color:  rgb(43, 41, 41);
 }
 /* To make the padding and margin 0 for whole page */
 *{
@@ -13,10 +15,11 @@ body{
 }
 
 .background{
-    height: 100vh;
+    height: 90vh;
     width: 100vw;
     position: absolute;
-    object-fit: cover;
+    margin: auto;
+    /* object-fit: cover; */
     z-index: -1;
 }
 
@@ -136,12 +139,15 @@ nav ul{
     grid-template-rows: auto auto auto auto auto;
     text-align: center;
 }
+
 #time{
     line-height: 85px;
     color: 	rgb(211,211,211);
-    font-size: 3.5rem;
+    font-size: 2.6rem;
     letter-spacing: 1px;
+    font-family: 'Outfit', sans-serif;
 }
+
 .song-name{
     color: #fff;
     grid-row-start: 5;
